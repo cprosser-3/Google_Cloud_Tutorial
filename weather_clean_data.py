@@ -56,7 +56,7 @@ def clean_wind_direction(direction: str) -> str:
     if not direction or direction.lower() == 'na':
         return None
     direction = direction.replace(' ', '')
-    return direction if len(direction) > 0 and all([c in 'nsew' for c in direction]) else None
+    return direction if len(direction) > 0 and all([c.lower() in 'nsew' for c in direction]) else None
 
 
 def main():
