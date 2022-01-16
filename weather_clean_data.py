@@ -50,13 +50,13 @@ def clean_location(val: str) -> str:
         return None
     return val
     
-
+    
 def clean_wind_direction(direction: str) -> str:
     '''Ensures valid wind direction format'''
     if not direction or direction.lower() == 'na':
         return None
     direction = direction.replace(' ', '')
-    return direction if all([c.upper() for c in direction if c.lower() in 'nsew']) else None
+    return direction if len(direction) > 0 and all([c in 'nsew' for c in direction]) else None
 
 
 def main():
